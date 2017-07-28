@@ -18,15 +18,7 @@ class Board extends React.Component {
 		);
 	}
 
-	render() {
-		const winner = calculateWinner(this.props.squares);
-		let status;
-		if(winner) {
-			status = 'Winner: ' + winner;
-		} else {
-			status = 'Next player: ' + (this.props.xIsNext ? 'X' : 'O');
-		}
-
+	render() {		
 		return (
 			<div>
 			<div className="board-row">
@@ -95,7 +87,7 @@ class Game extends React.Component {
 	      		const desc = move ? 'Move #' + move : 'Game start';
 	      		return (
 	      			<li key={move}>
-	      				<a href="#" onClick={() => this.jumpTo(move)}>{desc}</a>
+	      				<button onClick={() => this.jumpTo(move)}>{desc}</button>
 	      			</li>
 	      		);
 	    	}
